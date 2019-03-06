@@ -1,2 +1,16 @@
 Git is a distributed version control system.
-Git is free software distributed under the .GPL
+Git is free software distributed under the GPL.
+
+Git常用命令：
+git init					初始化Git一个仓库
+git add file				把文件添加到仓库,可反复多次使用，添加多个文件
+git commit -m "xxx"			把文件提交到仓库status
+git status					查看仓库当前状态
+git diff					查看修改内容
+git log						查看提交历史
+git log --pretty=onrline	简洁版
+git reset --hard commit_id	在版本历史之间穿梭
+git reset --hard HEAD^		返回上一个版本查看命令历史
+git reflog					查看命令历史
+
+
