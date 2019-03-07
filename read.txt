@@ -2,19 +2,47 @@ Git is a distributed version control system.
 Git is free software distributed under the GPL.
 
 Git常用命令：
-git init					初始化Git一个仓库
-git add file				把文件添加到仓库,可反复多次使用，添加多个文件
-git commit -m "xxx"			把文件提交到仓库status
-git status					查看仓库当前状态
-git diff					查看修改内容
-git log						查看提交历史
-git log --pretty=onrline	简洁版
-git reset --hard commit_id	在版本历史之间穿梭
-git reset --hard HEAD^		返回上一个版本查看命令历史
-git reflog					查看命令历史
-git checkout -- file		直接丢弃工作区的修改
-git reset HEAD file			已添加到暂缓区想丢弃修改 使用该命令后再使用上一条命令
-git rm						删除版本库里的文件 需要再使用git commit
+git init							初始化Git一个仓库
+git add file						把文件添加到仓库,可反复多次使用，添加多个文件
+git commit -m "xxx"					把文件提交到仓库status
+git status							查看仓库当前状态
+git diff HEAD -- file				查看修改内容
+git log								查看提交历史
+git log --pretty=onrline			简洁版
+git reset --hard commit_id			在版本历史之间穿梭
+git reset --hard HEAD^				返回上一个版本查看命令历史
+git reflog							查看命令历史
+git checkout -- file				直接丢弃工作区的修改
+git reset HEAD file					已添加到暂缓区想丢弃修改 使用该命令后再使用上一条命令
+git rm								删除版本库里的文件 需要再使用git commit
 git remote add orgin git@github.com:path/repo-name.git 关联一个远程库
 git push -u orgin master 第一次推送master分支的所有内容
 git push orgin master 经过第一次推送之后，只要有必要，就可以使用该命令推送最新修改
+git branch							查看分支
+git branch <name>					创建分支
+git checkout <name>					切换分支
+git checkout -b <name>				创建+切换分支
+git merge <name>					合并某分支到当前分支
+git branch -d <name>				删除分支
+git log --graph						可以看到分支合并图产品
+git merge --no-ff -m “” <name>		可以使用普通模式合并，合并后的历史有分支
+git stash							把当前工作储藏起来
+git stash list						查看储藏内容
+git stash pop						恢复储藏内容并删除储藏内容
+git branch -d <name>				删除分支
+git branch -D <name>				强制删除分支
+git remote							查看远程库的信息
+git remote -v						显示更详细信息
+git push orgin branch-name			从本地推送分支
+git pull							抓取远程的新提交
+git checkout -b branch-name orgin/branch-name  在本地创建和远程分支对应的分支
+git branch --set-upstream branch-name orgin/branch-name 建立本地分支和远程分支的关联
+git rebase							把本地未push的分叉提交历史整理成直线
+git tag [name] [commit_id]			打一个标签，如果没有name就是查看所有标签,如果都有则是在一个commit_id上打一个标签
+git show <tagname>					查看标签信息
+git tag -a <tagname> -m "xxx"		可以指定标签信息
+git tag -d <tagname>				删除标签
+git push orgin <tagname>			推送标签到远程
+git push orgin --tags				推送全部未推送的本地标签
+git push orgin:refs/tags/<tagname>	删除一个远程标签
+
